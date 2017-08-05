@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="common/header :: common-header" />
+
+<body>
+
+    <div th:replace="common/navbar :: common-navbar" />
+
+    <!-- Main Jumbotron
+  ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h1 class="text-center" th:text="#{copy.h1.text}"></h1>
+                    <p class="lead" th:text="#{copy.p.lead}"></p>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- ./container -->
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row" align="center">
+          	<!-- <div class="col-lg-4 span4"> -->  
+                <a href="https://www.linkedin.com/in/girishananda/">
+                    <img class="img-circle"
+                         src="http://en.gravatar.com/userimage/125909534/d0c81421bbff26f2d33b1b3f85955fa5.jpg?size=200"
+                         alt="Girish Ananda" width="140" height="140" />
+                </a>
+                <h2>Girish Ananda<small class="member-title">, MS</small></h2>
+                <div class="span4 collapse-group">
+                    <p class="collapse text-justify" th:text="#{copy.project.lead.intro}"></p>
+                    <p><a class="btn btn-primary btn-collapse" href="#" role="button" th:text="#{copy.viewdetails.button}"></a></p>
+                </div>
+           	<!-- </div> --> <!-- /.col-lg-4 -->
+           	
+        </div><!-- /.row -->
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider" />
+			<div class="row">
+		        <div class="featurette">
+		            <img class="featurette-image pull-right" th:src="@{/images/browser-icon-chrome.png}" />
+		            <h2 class="featurette-heading">Hello. <span class="muted">How are you? (:</span></h2>
+		            <p class="lead">I develop. Do you?</p>
+		        </div>
+			</div>
+        <hr class="featurette-divider" />
+			<div class="row">
+		        <div class="featurette">
+		            <img class="featurette-image pull-left" th:src="@{/images/browser-icon-firefox.png}" />
+		            <h2 class="featurette-heading">Yeppers! <span class="muted">It's cool.</span></h2>
+		            <p class="lead">More so now than ever before.</p>
+		        </div>
+		</div>
+        <hr class="featurette-divider" />
+			<div class="row">
+		        <div class="featurette">
+		            <img class="featurette-image pull-right" th:src="@{/images/browser-icon-safari.png}" />
+		            <h2 class="featurette-heading">Let's collaborate. <span class="muted">Develop.</span></h2>
+		            <p class="lead">Add value.</p>
+		        </div>
+			</div>
+        <hr class="featurette-divider" />
+
+        <!-- /END THE FEATURETTES -->
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2017 Ann &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+
+    </div><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <div th:replace="common/header :: before-body-scripts" />
+
+</body>
+</html>
