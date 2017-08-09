@@ -22,7 +22,7 @@ public class UserRole implements Serializable {
 
     }
 
-    @Id
+//    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
@@ -31,13 +31,13 @@ public class UserRole implements Serializable {
         this.role = role;
     }
 
-
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Id
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
 
-
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Id
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id")
     private Role role;
 

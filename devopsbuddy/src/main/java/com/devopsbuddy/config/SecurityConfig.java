@@ -41,6 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/about/**",
             "/contact/**",
             "/error/**/*",
+            "/console/**"
             
             
     };
@@ -48,6 +49,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+    	List<String> activeProfiles = Arrays.asList(env.getActiveProfiles());
+        if (activeProfiles.contains("dev")) {
+            http.csrf().disable(); /** Required to disable while developing H2 */
+            http.headers().frameOptions().disable();
+        }
+        
         http
                 .authorizeRequests()						// authorize all http security
                 .antMatchers(PUBLIC_MATCHERS).permitAll()	// No need of authentication for pu
