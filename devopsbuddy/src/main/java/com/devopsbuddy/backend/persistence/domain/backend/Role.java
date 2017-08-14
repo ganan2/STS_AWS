@@ -74,8 +74,8 @@ public class Role implements Serializable {
 
     }
 
-    @Override
-    public int hashCode() {
-        return id;
-    }
+//    @Override
+//    public int hashCode() {
+//        return id;
+//    }
 }

@@ -14,12 +14,17 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import com.devopsbuddy.backend.service.UserSecurityService;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private Environment env;
+    
+    @Autowired
+    private UserSecurityService userSecurityService;
 
     /** The encryption SALT. */
     private static final String SALT = "fdalkjalk;3jlwf00sfaof";
@@ -69,8 +74,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .inMemoryAuthentication()
-                .withUser("user").password("password")
-                .roles("USER"); // default role is USER
+                .userDetailsService(userSecurityService);
     }
 }
