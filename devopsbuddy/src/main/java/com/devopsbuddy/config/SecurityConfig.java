@@ -27,7 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private UserSecurityService userSecurityService;
 
     /** The encryption SALT. */
-    private static final String SALT = "fdalkjalk;3jlwf00sfaof";
+    private static final String SALT = "dmspmf;sdjf;s;fmkas['f,";
+    //fdalkjalk;3jlwf00sfaof
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -74,6 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(userSecurityService);
+                .userDetailsService(userSecurityService)
+                .passwordEncoder(passwordEncoder());
     }
 }
