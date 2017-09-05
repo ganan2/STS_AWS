@@ -1,11 +1,5 @@
 package com.devopsbuddy.test.integration;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import org.junit.rules.TestName;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.devopsbuddy.backend.persistence.domain.backend.Plan;
 import com.devopsbuddy.backend.persistence.domain.backend.Role;
 import com.devopsbuddy.backend.persistence.domain.backend.User;
@@ -16,6 +10,11 @@ import com.devopsbuddy.backend.persistence.repositories.UserRepository;
 import com.devopsbuddy.enums.PlansEnum;
 import com.devopsbuddy.enums.RolesEnum;
 import com.devopsbuddy.utils.UserUtils;
+import org.junit.rules.TestName;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class AbstractIntegrationTest {
 

@@ -1,22 +1,12 @@
 package com.devopsbuddy.backend.persistence.domain.backend;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
-
-import javax.persistence.Column;
-import javax.persistence.Convert;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
+import com.devopsbuddy.backend.persistence.converters.LocalDateTimeAttributeConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.devopsbuddy.backend.persistence.converters.LocalDateTimeAttributeConverter;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Entity
 public class PasswordResetToken implements Serializable {
