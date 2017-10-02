@@ -12,10 +12,20 @@
 <link type="text/css" th:href="@{/css/styles.css}" rel="stylesheet"
 	media="screen" />
 
+<!-- Enable if formvalidation.io is used -->
+<!--  Form Validation if used -->
+<!-- <link type="text/css" th:href"@{/css/formvalidation.min.css}" rel="stylesheet" media="screen"> -->
+
+
 </head>
 <div th:fragment="before-body-scripts">
 	<script th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
 	<script th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
 	<script th:src="@{/js/devopsbuddy.js}"></script>
+	
+	<!-- Enable if formvalidation.io is used -->
+	<!-- <script th:src="@{/js/formValidation.min.js}></script> -->
+	<!-- <script th:src="@{/js/bootstrap.min.js}></script> -->
+	
 </div>
 </html>
