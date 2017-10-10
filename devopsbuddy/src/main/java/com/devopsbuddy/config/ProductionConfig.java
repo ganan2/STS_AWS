@@ -1,5 +1,6 @@
 package com.devopsbuddy.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -12,9 +13,17 @@ import com.devopsbuddy.backend.service.SmtpEmailService;
 @Profile("prod")
 @PropertySource("file:///${user.home}/.devopsbuddy/application-prod.properties")
 public class ProductionConfig {
-	
-	@Bean
-	public EmailService emailService() {
-		return new SmtpEmailService();
-	}
+
+    @Value("${stripe.prod.private.key}")
+    private String stripeProdKey;
+
+    @Bean
+    public EmailService emailService() {
+        return new SmtpEmailService();
+    }
+
+    @Bean
+    public String stripeKey() {
+        return stripeProdKey;
+    }
 }
